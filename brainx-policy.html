@@ -3,37 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - BrainX</title>
+    <title>Privacy Policy - BrainX : Live Quiz & GK Test</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; background-color: #0b0f19; color: #f8fafc; padding: 30px; line-height: 1.8; }
-        .box { max-width: 800px; margin: auto; background: #1e293b; padding: 35px; border-radius: 12px; border: 1px solid #334155; }
-        h1 { color: #38bdf8; font-size: 24px; border-bottom: 2px solid #334155; padding-bottom: 10px; }
-        h3 { color: #38bdf8; margin-top: 25px; }
-        p, li { color: #cbd5e1; }
-        a { color: #38bdf8; text-decoration: none; display: inline-block; margin-top: 25px; font-weight: bold; }
+        :root {
+            --bg-color: #030712;
+            --surface-card: rgba(30, 41, 59, 0.7);
+            --accent-primary: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.8; padding: 40px 20px; }
+        .policy-container { max-width: 850px; margin: auto; background: var(--surface-card); backdrop-filter: blur(16px); border: 1px solid var(--border-color); padding: 50px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
+        h1 { color: var(--accent-primary); font-size: 28px; margin-bottom: 10px; font-weight: 800; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
+        .last-updated { color: var(--text-muted); font-size: 14px; margin-bottom: 30px; }
+        h3 { color: var(--accent-primary); margin-top: 30px; font-size: 18px; font-weight: 700; }
+        p, li { color: #cbd5e1; font-size: 15px; margin-top: 10px; }
+        ul { padding-left: 20px; }
+        .back-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 40px; padding: 12px 24px; background: rgba(56, 189, 248, 0.1); border: 1px solid var(--accent-primary); color: var(--accent-primary); border-radius: 12px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; }
+        .back-btn:hover { background: var(--accent-primary); color: var(--bg-color); box-shadow: 0 0 20px rgba(56,189,248,0.5); }
     </style>
 </head>
 <body>
-    <div class="box">
+    <div class="policy-container">
         <h1>Privacy Policy - BrainX : Live Quiz & GK Test</h1>
-        <p>Last updated: October 2026</p>
+        <div class="last-updated">Last updated: October 2026</div>
 
-        <h3>1. Children's Privacy (COPPA Compliant)[span_5](start_span)[span_5](end_span)</h3>
-        <p>BrainX is strictly family-friendly and 100% compliant with the Children's Online Privacy Protection Act (COPPA)[span_6](start_span)[span_6](end_span). We do not collect any personal identifiable information (PII) from children[span_7](start_span)[span_7](end_span).</p>
+        <h3>1. Children's Privacy (COPPA Compliant)</h3>
+        <p>BrainX is strictly family-friendly and 100% compliant with the Children's Online Privacy Protection Act (COPPA). We do not collect any personal identifiable information (PII) from children.</p>
 
-        <h3>2. Google AdMob Services[span_8](start_span)[span_8](end_span)</h3>
-        <p>We use Google AdMob to serve child-directed ads[span_9](start_span)[span_9](end_span). AdMob is configured with strict COPPA parameters (<code>TAG_FOR_CHILD_DIRECTED_TREATMENT_TRUE</code>) to ensure no personalized tracking or sensitive ads are displayed[span_10](start_span)[span_10](end_span).</p>
+        <h3>2. Google AdMob Services</h3>
+        <p>We use Google AdMob to serve child-directed ads. AdMob is configured with strict COPPA parameters (<code>TAG_FOR_CHILD_DIRECTED_TREATMENT_TRUE</code>) to ensure no personalized tracking or sensitive ads are displayed.</p>
 
-        <h3>3. Offline Data Persistence[span_11](start_span)[span_11](end_span)</h3>
-        <p>All your quiz scores, coin balance, and settings are saved 100% locally on your device using Jetpack DataStore[span_12](start_span)[span_12](end_span). Your data never leaves your device[span_13](start_span)[span_13](end_span).</p>
+        <h3>3. Offline Data Persistence</h3>
+        <p>All your quiz scores, coin balance, and settings are saved 100% locally on your device using Jetpack DataStore. Your data never leaves your device.</p>
 
         <h3>4. Google Play Compliance & Data Safety</h3>
         <p>Our app adheres strictly to Google Play Developer Program Policies regarding data collection, safety, and security. No user data is shared with third parties for tracking purposes.</p>
 
-        <h3>5. Contact Us[span_14](start_span)[span_14](end_span)</h3>
-        <p>For any questions or support regarding privacy, feel free to contact us at <strong>jeetcreation03@gmail.com</strong>[span_15](start_span)[span_15](end_span).</p>
+        <h3>5. Contact Us</h3>
+        <p>For any questions or support regarding privacy, feel free to contact us at <strong>jeetcreation03@gmail.com</strong>.</p>
 
-        <a href="index.html">&larr; Back to Home</a>
+        <a href="index.html" class="back-btn">&larr; Back to Home</a>
     </div>
 </body>
 </html>
