@@ -10,7 +10,7 @@
             --bg-color: #020617;
             --surface-card: rgba(15, 23, 42, 0.75);
             --accent-primary: #38bdf8;
-            --accent-glow: rgba(56, 189, 248, 0.4);
+            --accent-glow: rgba(56, 189, 248, 0.35);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --border-color: rgba(56, 189, 248, 0.2);
@@ -19,30 +19,12 @@
         * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; overflow-x: hidden; position: relative; }
 
-        /* Fullscreen Interactive Canvas */
+        /* Fullscreen FX Canvas */
         #fx-canvas {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             pointer-events: none;
             z-index: 1;
-        }
-
-        /* Ultimate Touch Ripple & Sparkle Engine for Mobile & Desktop */
-        .touch-shockwave {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            border: 2px solid rgba(56, 189, 248, 0.8);
-            background: radial-gradient(circle, rgba(56,189,248,0.5) 0%, rgba(56,189,248,0) 80%);
-            border-radius: 50%;
-            transform: translate(-50%, -50%) scale(0.2);
-            animation: shockwaveAnim 0.7s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
-            pointer-events: none;
-            z-index: 9999;
-        }
-        @keyframes shockwaveAnim {
-            0% { transform: translate(-50%, -50%) scale(0.2); opacity: 1; }
-            100% { transform: translate(-50%, -50%) scale(15); opacity: 0; border-color: rgba(129, 140, 248, 0); }
         }
 
         /* Navigation Bar */
@@ -71,7 +53,7 @@
         .section-header h2 { font-size: 36px; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.5px; color: #f8fafc; text-shadow: 0 0 20px rgba(56,189,248,0.4); }
         .section-header p { color: var(--text-muted); font-size: 16px; }
 
-        /* Products Grid with Holographic Glow */
+        /* Products Grid */
         .products-section { padding: 80px 0; }
         .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
         
@@ -96,7 +78,7 @@
             background: linear-gradient(90deg, transparent, rgba(56,189,248,0.18), transparent);
             transition: 0.7s;
         }
-        .product-card:hover::before, .product-card:active::before { left: 150%; }
+        .product-card:hover::before { left: 150%; }
 
         .product-card:hover { 
             transform: translateY(-8px) scale(1.01); 
@@ -150,7 +132,7 @@
 </head>
 <body>
 
-    <!-- Ultimate FX Canvas -->
+    <!-- FX Canvas -->
     <canvas id="fx-canvas"></canvas>
 
     <!-- Navigation Bar -->
@@ -285,7 +267,7 @@
         <p>&copy; 2026 Jeet Creationz. All rights reserved.</p>
     </footer>
 
-    <!-- Universal Global Interactive Engine Script -->
+    <!-- Optimized Silk-Smooth Interactive Engine Script -->
     <script>
         const canvas = document.getElementById('fx-canvas');
         const ctx = canvas.getContext('2d');
@@ -298,55 +280,42 @@
         window.addEventListener('resize', resizeCanvas);
 
         let particles = [];
-        const pointer = { x: null, y: null, radius: 180, active: false };
+        const pointer = { x: null, y: null, radius: 160 };
 
-        // Universal Pointer Tracker (Handles Mouse & Mobile Touch across entire screen anywhere)
-        function updatePointerPosition(clientX, clientY) {
+        // Silky-Smooth Pointer / Touch Tracking Anywhere on Screen
+        function setPointerPosition(clientX, clientY) {
             pointer.x = clientX;
             pointer.y = clientY;
-            pointer.active = true;
         }
 
-        window.addEventListener('mousemove', (e) => updatePointerPosition(e.clientX, e.clientY));
-        window.addEventListener('mouseout', () => { pointer.x = null; pointer.y = null; pointer.active = false; });
+        window.addEventListener('mousemove', (e) => setPointerPosition(e.clientX, e.clientY));
+        window.addEventListener('mouseout', () => { pointer.x = null; pointer.y = null; });
 
-        // Global Touch Listener (Guaranteed to capture anywhere on mobile screen)
         window.addEventListener('touchstart', (e) => {
             if(e.touches.length > 0) {
-                let tx = e.touches[0].clientX;
-                let ty = e.touches[0].clientY;
-                updatePointerPosition(tx, ty);
-
-                // Trigger Shockwave Ripple anywhere on touch
-                let shock = document.createElement('div');
-                shock.className = 'touch-shockwave';
-                shock.style.left = `${tx}px`;
-                shock.style.top = `${ty}px`;
-                document.body.appendChild(shock);
-                setTimeout(() => shock.remove(), 700);
+                setPointerPosition(e.touches[0].clientX, e.touches[0].clientY);
             }
         }, { passive: true });
 
         window.addEventListener('touchmove', (e) => {
             if(e.touches.length > 0) {
-                updatePointerPosition(e.touches[0].clientX, e.touches[0].clientY);
+                setPointerPosition(e.touches[0].clientX, e.touches[0].clientY);
             }
         }, { passive: true });
 
         window.addEventListener('touchend', () => {
             pointer.x = null;
             pointer.y = null;
-            pointer.active = false;
         });
 
-        class TechParticle {
+        class SmoothParticle {
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2.2 + 0.8;
-                this.vx = (Math.random() - 0.5) * 0.9;
-                this.vy = (Math.random() - 0.5) * 0.9;
-                this.color = Math.random() > 0.3 ? 'rgba(56, 189, 248, 0.7)' : 'rgba(129, 140, 248, 0.7)';
+                this.size = Math.random() * 2 + 0.8;
+                this.vx = (Math.random() - 0.5) * 0.7;
+                this.vy = (Math.random() - 0.5) * 0.7;
+                this.color = Math.random() > 0.4 ? 'rgba(56, 189, 248, 0.65)' : 'rgba(129, 140, 248, 0.65)';
             }
             update() {
                 this.x += this.vx;
@@ -362,8 +331,8 @@
                     if (dist < pointer.radius) {
                         let force = (pointer.radius - dist) / pointer.radius;
                         let angle = Math.atan2(dy, dx);
-                        this.x -= Math.cos(angle) * force * 5;
-                        this.y -= Math.sin(angle) * force * 5;
+                        this.x -= Math.cos(angle) * force * 4;
+                        this.y -= Math.sin(angle) * force * 4;
                     }
                 }
             }
@@ -378,19 +347,19 @@
 
         function initFX() {
             particles = [];
-            let count = (canvas.width * canvas.height) / 10000;
+            let count = (canvas.width * canvas.height) / 11000;
             for (let i = 0; i < count; i++) {
-                particles.push(new TechParticle());
+                particles.push(new SmoothParticle());
             }
         }
         initFX();
 
-        function drawConstellations() {
+        function drawLines() {
             for (let i = 0; i < particles.length; i++) {
                 for (let j = i; j < particles.length; j++) {
                     let d = ((particles[i].x - particles[j].x) ** 2) + ((particles[i].y - particles[j].y) ** 2);
-                    if (d < 14000) {
-                        let alpha = (1 - (d / 14000)) * 0.25;
+                    if (d < 12000) {
+                        let alpha = (1 - (d / 12000)) * 0.2;
                         ctx.strokeStyle = `rgba(56, 189, 248, ${alpha})`;
                         ctx.lineWidth = 1;
                         ctx.beginPath();
@@ -408,7 +377,7 @@
                 particles[i].update();
                 particles[i].draw();
             }
-            drawConstellations();
+            drawLines();
             requestAnimationFrame(animateFX);
         }
         animateFX();
