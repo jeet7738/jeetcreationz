@@ -118,7 +118,7 @@
             box-shadow: 0 35px 70px rgba(0,0,0,0.9), 0 0 45px var(--accent-glow); 
         }
 
-        .card-top { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; }
+        .card-top { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 18px; }
         .app-icon { 
             width: 68px; height: 68px; border-radius: 16px; object-fit: cover; flex-shrink: 0; 
             box-shadow: 0 10px 20px rgba(0,0,0,0.6); 
@@ -128,7 +128,7 @@
         .app-meta h3 { font-size: 19px; font-weight: 700; margin-bottom: 4px; color: var(--text-main); }
         .app-meta p { font-size: 13.5px; color: var(--text-muted); line-height: 1.45; }
 
-        /* Play Store Style Gallery Slider (Feature Graphics + Screenshots) */
+        /* Clean Screenshot Horizontal Slider */
         .screenshot-slider {
             display: flex; gap: 12px; overflow-x: auto; padding: 6px 0 14px 0;
             scrollbar-width: thin; scrollbar-color: var(--accent-primary) transparent;
@@ -136,16 +136,8 @@
         .screenshot-slider::-webkit-scrollbar { height: 6px; }
         .screenshot-slider::-webkit-scrollbar-thumb { background: rgba(56, 189, 248, 0.5); border-radius: 10px; }
         
-        .card-feature-preview {
-            width: 220px; height: 125px; object-fit: cover; border-radius: 12px;
-            border: 1px solid rgba(56,189,248,0.3); flex-shrink: 0;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.4);
-            transition: transform 0.3s ease;
-        }
-        .card-feature-preview:hover { transform: scale(1.03); }
-
         .app-screenshot {
-            width: 95px; height: 170px; object-fit: cover; border-radius: 12px;
+            width: 100px; height: 180px; object-fit: cover; border-radius: 12px;
             border: 1px solid rgba(56,189,248,0.25); flex-shrink: 0;
             box-shadow: 0 6px 16px rgba(0,0,0,0.4);
             transition: transform 0.3s ease;
@@ -255,9 +247,7 @@
                             <p>Interactive trivia & general knowledge platform.</p>
                         </div>
                     </div>
-                    <!-- Play Store Style Gallery Slider (Feature Graphic + Screenshots) -->
                     <div class="screenshot-slider">
-                        <img src="fg-brainx.jpg" alt="BrainX Feature Graphic" class="card-feature-preview">
                         <img src="brainx-ss1.jpg" alt="BrainX Screenshot 1" class="app-screenshot">
                         <img src="brainx-ss2.jpg" alt="BrainX Screenshot 2" class="app-screenshot">
                     </div>
@@ -278,7 +268,6 @@
                         </div>
                     </div>
                     <div class="screenshot-slider">
-                        <img src="fg-resizex.jpg" alt="ResizeX Feature Graphic" class="card-feature-preview">
                         <img src="resizex-ss1.jpg" alt="ResizeX Screenshot 1" class="app-screenshot">
                         <img src="resizex-ss2.jpg" alt="ResizeX Screenshot 2" class="app-screenshot">
                         <img src="resizex-ss3.jpg" alt="ResizeX Screenshot 3" class="app-screenshot">
@@ -301,7 +290,6 @@
                         </div>
                     </div>
                     <div class="screenshot-slider">
-                        <img src="fg-sleepx.jpg" alt="SleepX Feature Graphic" class="card-feature-preview">
                         <img src="sleepx-ss1.jpg" alt="SleepX Screenshot 1" class="app-screenshot">
                         <img src="sleepx-ss2.jpg" alt="SleepX Screenshot 2" class="app-screenshot">
                         <img src="sleepx-ss3.jpg" alt="SleepX Screenshot 3" class="app-screenshot">
@@ -326,7 +314,6 @@
                         </div>
                     </div>
                     <div class="screenshot-slider">
-                        <img src="fg-scp.jpg" alt="Speaker Cleaner Feature Graphic" class="card-feature-preview">
                         <img src="scp-ss1.jpg" alt="Speaker Cleaner Screenshot 1" class="app-screenshot">
                         <img src="scp-ss2.jpg" alt="Speaker Cleaner Screenshot 2" class="app-screenshot">
                         <img src="scp-ss3.jpg" alt="Speaker Cleaner Screenshot 3" class="app-screenshot">
@@ -349,7 +336,6 @@
                         </div>
                     </div>
                     <div class="screenshot-slider">
-                        <img src="fg-statusx.jpg" alt="StatusX Feature Graphic" class="card-feature-preview">
                         <img src="statusx-ss1.jpg" alt="StatusX Screenshot 1" class="app-screenshot">
                         <img src="statusx-ss2.jpg" alt="StatusX Screenshot 2" class="app-screenshot">
                         <img src="statusx-ss3.jpg" alt="StatusX Screenshot 3" class="app-screenshot">
