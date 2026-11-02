@@ -19,13 +19,13 @@
     <style>
         :root {
             --bg-color: #020617;
-            --surface-card: rgba(15, 23, 42, 0.75);
+            --surface-card: rgba(15, 23, 42, 0.78);
             --accent-primary: #38bdf8;
-            --accent-glow: rgba(56, 189, 248, 0.25);
+            --accent-glow: rgba(56, 189, 248, 0.3);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --border-color: rgba(56, 189, 248, 0.15);
-            --border-hover: rgba(56, 189, 248, 0.5);
+            --border-color: rgba(56, 189, 248, 0.18);
+            --border-hover: rgba(56, 189, 248, 0.6);
         }
         
         * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
@@ -48,7 +48,7 @@
 
         nav { 
             position: fixed; top: 0; left: 0; width: 100%; 
-            background: rgba(2, 6, 23, 0.82); 
+            background: rgba(2, 6, 23, 0.85); 
             backdrop-filter: blur(20px); 
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border-color); 
@@ -60,7 +60,7 @@
         .nav-brand { display: flex; align-items: center; text-decoration: none; }
         .nav-logo-img { 
             height: 40px; width: auto; border-radius: 10px; 
-            filter: drop-shadow(0 0 10px var(--accent-glow)); 
+            filter: drop-shadow(0 0 12px var(--accent-glow)); 
             transition: transform 0.3s ease; 
         }
         .nav-logo-img:hover { transform: scale(1.06); }
@@ -77,7 +77,7 @@
         .hero-banner { 
             width: 100%; max-height: 480px; object-fit: cover; border-radius: 24px; 
             border: 1px solid var(--border-color); 
-            box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 40px var(--accent-glow); 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 45px var(--accent-glow); 
             margin-bottom: 30px; 
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); 
         }
@@ -102,57 +102,59 @@
         
         .product-card { 
             background: var(--surface-card); 
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
             border: 1px solid var(--border-color); 
             border-radius: 24px; 
-            padding: 25px; 
+            padding: 28px; 
             display: flex; flex-direction: column; justify-content: space-between; 
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
             position: relative; overflow: hidden; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
         }
         .product-card:hover { 
-            transform: translateY(-6px); 
+            transform: translateY(-8px); 
             border-color: var(--border-hover); 
-            box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 35px var(--accent-glow); 
-        }
-        
-        .card-feature-img {
-            width: 100%; height: 160px; object-fit: cover; border-radius: 14px;
-            margin-bottom: 18px; border: 1px solid rgba(56,189,248,0.2);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 35px 70px rgba(0,0,0,0.9), 0 0 45px var(--accent-glow); 
         }
 
-        .card-top { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 15px; }
+        .card-top { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; }
         .app-icon { 
-            width: 64px; height: 64px; border-radius: 16px; object-fit: cover; flex-shrink: 0; 
-            box-shadow: 0 8px 16px rgba(0,0,0,0.5); 
-            border: 1px solid rgba(56,189,248,0.3); 
+            width: 68px; height: 68px; border-radius: 16px; object-fit: cover; flex-shrink: 0; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.6); 
+            border: 1px solid rgba(56,189,248,0.4); 
         }
         
-        .app-meta h3 { font-size: 18px; font-weight: 700; margin-bottom: 4px; color: var(--text-main); }
-        .app-meta p { font-size: 13px; color: var(--text-muted); line-height: 1.4; }
+        .app-meta h3 { font-size: 19px; font-weight: 700; margin-bottom: 4px; color: var(--text-main); }
+        .app-meta p { font-size: 13.5px; color: var(--text-muted); line-height: 1.45; }
 
-        /* Play Store Style Screenshot Horizontal Slider */
+        /* Play Store Style Gallery Slider (Feature Graphics + Screenshots) */
         .screenshot-slider {
-            display: flex; gap: 10px; overflow-x: auto; padding: 5px 0 12px 0;
+            display: flex; gap: 12px; overflow-x: auto; padding: 6px 0 14px 0;
             scrollbar-width: thin; scrollbar-color: var(--accent-primary) transparent;
         }
-        .screenshot-slider::-webkit-scrollbar { height: 5px; }
-        .screenshot-slider::-webkit-scrollbar-thumb { background: rgba(56, 189, 248, 0.4); border-radius: 10px; }
+        .screenshot-slider::-webkit-scrollbar { height: 6px; }
+        .screenshot-slider::-webkit-scrollbar-thumb { background: rgba(56, 189, 248, 0.5); border-radius: 10px; }
         
-        .app-screenshot {
-            width: 100px; height: 180px; object-fit: cover; border-radius: 10px;
-            border: 1px solid rgba(56,189,248,0.2); flex-shrink: 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        .card-feature-preview {
+            width: 220px; height: 125px; object-fit: cover; border-radius: 12px;
+            border: 1px solid rgba(56,189,248,0.3); flex-shrink: 0;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.4);
             transition: transform 0.3s ease;
         }
-        .app-screenshot:hover { transform: scale(1.05); }
+        .card-feature-preview:hover { transform: scale(1.03); }
 
-        .card-actions { margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--border-color); }
+        .app-screenshot {
+            width: 95px; height: 170px; object-fit: cover; border-radius: 12px;
+            border: 1px solid rgba(56,189,248,0.25); flex-shrink: 0;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease;
+        }
+        .app-screenshot:hover { transform: scale(1.04); }
+
+        .card-actions { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--border-color); }
         .btn { 
-            width: 100%; padding: 12px 18px; border-radius: 12px; font-size: 13.5px; font-weight: 700; 
+            width: 100%; padding: 13px 20px; border-radius: 14px; font-size: 14px; font-weight: 700; 
             text-align: center; text-decoration: none; 
             transition: all 0.3s ease; 
             cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; 
@@ -161,12 +163,12 @@
         .btn-playstore { 
             background: linear-gradient(135deg, #0284c7, #2563eb); 
             color: white; border: none; 
-            box-shadow: 0 4px 15px rgba(37,99,235,0.4); 
+            box-shadow: 0 4px 20px rgba(37,99,235,0.5); 
         }
         .btn-playstore:hover { 
             background: linear-gradient(135deg, #0369a1, #1d4ed8); 
             transform: translateY(-2px); 
-            box-shadow: 0 6px 22px rgba(56,189,248,0.6); 
+            box-shadow: 0 8px 30px rgba(56,189,248,0.7); 
         }
 
         .about-section { 
@@ -246,7 +248,6 @@
             <!-- App 1: BrainX -->
             <div class="product-card reveal">
                 <div>
-                    <img src="fg-brainx.jpg" alt="BrainX Feature Graphics" class="card-feature-img">
                     <div class="card-top">
                         <img src="brainx-logo.png" alt="BrainX" class="app-icon">
                         <div class="app-meta">
@@ -254,8 +255,9 @@
                             <p>Interactive trivia & general knowledge platform.</p>
                         </div>
                     </div>
-                    <!-- Play Store Style Screenshots Slider -->
+                    <!-- Play Store Style Gallery Slider (Feature Graphic + Screenshots) -->
                     <div class="screenshot-slider">
+                        <img src="fg-brainx.jpg" alt="BrainX Feature Graphic" class="card-feature-preview">
                         <img src="brainx-ss1.jpg" alt="BrainX Screenshot 1" class="app-screenshot">
                         <img src="brainx-ss2.jpg" alt="BrainX Screenshot 2" class="app-screenshot">
                     </div>
@@ -268,7 +270,6 @@
             <!-- App 2: ResizeX -->
             <div class="product-card reveal">
                 <div>
-                    <img src="fg-resizex.jpg" alt="ResizeX Feature Graphics" class="card-feature-img">
                     <div class="card-top">
                         <img src="resizex-logo.png" alt="ResizeX" class="app-icon">
                         <div class="app-meta">
@@ -277,6 +278,7 @@
                         </div>
                     </div>
                     <div class="screenshot-slider">
+                        <img src="fg-resizex.jpg" alt="ResizeX Feature Graphic" class="card-feature-preview">
                         <img src="resizex-ss1.jpg" alt="ResizeX Screenshot 1" class="app-screenshot">
                         <img src="resizex-ss2.jpg" alt="ResizeX Screenshot 2" class="app-screenshot">
                         <img src="resizex-ss3.jpg" alt="ResizeX Screenshot 3" class="app-screenshot">
@@ -291,7 +293,6 @@
             <!-- App 3: SleepX -->
             <div class="product-card reveal">
                 <div>
-                    <img src="fg-sleepx.jpg" alt="SleepX Feature Graphics" class="card-feature-img">
                     <div class="card-top">
                         <img src="sleepx-logo.png" alt="SleepX" class="app-icon">
                         <div class="app-meta">
@@ -300,6 +301,7 @@
                         </div>
                     </div>
                     <div class="screenshot-slider">
+                        <img src="fg-sleepx.jpg" alt="SleepX Feature Graphic" class="card-feature-preview">
                         <img src="sleepx-ss1.jpg" alt="SleepX Screenshot 1" class="app-screenshot">
                         <img src="sleepx-ss2.jpg" alt="SleepX Screenshot 2" class="app-screenshot">
                         <img src="sleepx-ss3.jpg" alt="SleepX Screenshot 3" class="app-screenshot">
@@ -316,7 +318,6 @@
             <!-- App 4: Speaker Cleaner -->
             <div class="product-card reveal">
                 <div>
-                    <img src="fg-scp.jpg" alt="Speaker Cleaner Feature Graphics" class="card-feature-img">
                     <div class="card-top">
                         <img src="speaker-logo.png" alt="Speaker Cleaner" class="app-icon">
                         <div class="app-meta">
@@ -325,6 +326,7 @@
                         </div>
                     </div>
                     <div class="screenshot-slider">
+                        <img src="fg-scp.jpg" alt="Speaker Cleaner Feature Graphic" class="card-feature-preview">
                         <img src="scp-ss1.jpg" alt="Speaker Cleaner Screenshot 1" class="app-screenshot">
                         <img src="scp-ss2.jpg" alt="Speaker Cleaner Screenshot 2" class="app-screenshot">
                         <img src="scp-ss3.jpg" alt="Speaker Cleaner Screenshot 3" class="app-screenshot">
@@ -339,7 +341,6 @@
             <!-- App 5: StatusX -->
             <div class="product-card reveal">
                 <div>
-                    <img src="fg-statusx.jpg" alt="StatusX Feature Graphics" class="card-feature-img">
                     <div class="card-top">
                         <img src="statusx-logo.png" alt="StatusX" class="app-icon">
                         <div class="app-meta">
@@ -348,6 +349,7 @@
                         </div>
                     </div>
                     <div class="screenshot-slider">
+                        <img src="fg-statusx.jpg" alt="StatusX Feature Graphic" class="card-feature-preview">
                         <img src="statusx-ss1.jpg" alt="StatusX Screenshot 1" class="app-screenshot">
                         <img src="statusx-ss2.jpg" alt="StatusX Screenshot 2" class="app-screenshot">
                         <img src="statusx-ss3.jpg" alt="StatusX Screenshot 3" class="app-screenshot">
